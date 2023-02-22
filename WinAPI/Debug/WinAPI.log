@@ -1,0 +1,6 @@
+﻿  ks_Application.cpp
+C:\Users\user\source\repos\WinAPI\WinAPI\ks_Application.cpp(58,51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\WinAPI\WinAPI\ks_Application.cpp(58,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\WinAPI\WinAPI\ks_Application.cpp(58,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\WinAPI\WinAPI\ks_Application.cpp(58,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  WinAPI.vcxproj -> C:\Users\user\source\repos\WinAPI\Debug\WinAPI.exe
