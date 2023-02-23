@@ -9,8 +9,12 @@ namespace ks
 	{
 	private:
 		HWND	hwnd;
+		HBITMAP	backBuffer;
 		HDC		hdc;
+		HDC		backHdc;
 		Vector2	pos;
+		UINT	width;
+		UINT	height;
 
 	public:
 		Application();

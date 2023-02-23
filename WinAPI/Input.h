@@ -39,5 +39,9 @@ namespace ks
 		static void Update();
 		static void Render(HDC hdc);
 		static void Release();
+		inline static e_KeyState GetKeyState(e_KeyCode keyCode)
+		{
+			return keys[(UINT)keyCode].keyState;
+		}
 	};
 }

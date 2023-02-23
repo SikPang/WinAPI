@@ -15,10 +15,12 @@ namespace ks
 
 	void PlayScene::Initialize()
 	{
-		Scene::Initialize();
-
 		Player* player = new Player();
+		player->SetName(L"Player");
+		//player->SetPos(Vector2(0.0f, 0.0f));
 		AddGameObject(player, e_LayerType::Player);
+
+		Scene::Initialize();
 	}
 	
 	void PlayScene::Update()

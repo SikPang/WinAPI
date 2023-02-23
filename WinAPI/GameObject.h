@@ -24,5 +24,6 @@ namespace ks
 		virtual void	Update();
 		virtual void	Render(HDC hdc);
 		virtual void	Release();
+		void	SetPos(Vector2 pos) { this->pos = pos; };
 	};
 }

@@ -17,6 +17,6 @@ namespace ks
 		static void Update();
 		static void Render(HDC hdc);
 		static void Release();
-		static double GetDeltaTime() { return deltaTime; };
+		__forceinline static double GetDeltaTime() { return deltaTime; };
 	};
 }

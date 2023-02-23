@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Time.h"
+#include "Input.h"
 
 namespace ks
 {
@@ -25,22 +26,22 @@ namespace ks
 	{
 		GameObject::Update();
 
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		if (Input::GetKeyState(e_KeyCode::A) == e_KeyState::Pressed)
 		{
 			pos.x -= 200.f * Time::GetDeltaTime();
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		if (Input::GetKeyState(e_KeyCode::D) == e_KeyState::Pressed)
 		{
 			pos.x += 200.f * Time::GetDeltaTime();
 		}
 
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		if (Input::GetKeyState(e_KeyCode::W) == e_KeyState::Pressed)
 		{
 			pos.y -= 200.f * Time::GetDeltaTime();
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		if (Input::GetKeyState(e_KeyCode::S) == e_KeyState::Pressed)
 		{
 			pos.y += 200.f * Time::GetDeltaTime();
 		}
@@ -53,6 +54,8 @@ namespace ks
 		HBRUSH brush = CreateSolidBrush(RGB(128, 128, 128));
 		HBRUSH prev = (HBRUSH)SelectObject(hdc, brush);
 		Rectangle(hdc, pos.x, pos.y, pos.x + 100, pos.y + 100);
+		SelectObject(hdc, prev);
+		DeleteObject(brush);
 	}
 	
 	void Player::Release()
