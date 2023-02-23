@@ -1,6 +1,8 @@
 #include "Player.h"
 #include "Time.h"
 #include "Input.h"
+#include "Resources.h"
+#include "Image.h"
 
 namespace ks
 {
@@ -16,6 +18,8 @@ namespace ks
 	
 	void Player::Initialize()
 	{
+		Image* playerImage = Resources::Load<Image>(L"playerImage", L"..\\Resources\\player.bmp");
+
 		GameObject::Initialize();
 
 		pos.x = 200;

@@ -1,30 +1,28 @@
-﻿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++에서 생성한 포함 파일입니다.
-// 다음에서 사용 WinAPI.rc
+#pragma once
 
-#define IDS_APP_TITLE			103
+#include <map>
+#include <string>
+#include <Windows.h>
 
-#define IDR_MAINFRAME			128
-#define IDD_WINAPI_DIALOG	102
-#define IDD_ABOUTBOX			103
-#define IDM_ABOUT				104
-#define IDM_EXIT				105
-#define IDI_WINAPI			107
-#define IDI_SMALL				108
-#define IDC_WINAPI			109
-#define IDC_MYICON				2
-#ifndef IDC_STATIC
-#define IDC_STATIC				-1
-#endif
-// 다음은 새 개체에 사용할 기본값입니다.
-//
-#ifdef APSTUDIO_INVOKED
-#ifndef APSTUDIO_READONLY_SYMBOLS
+namespace ks
+{
+	// �߻� Ŭ����
+	class Resource
+	{
+	private:
+		std::wstring	key;
+		std::wstring	path;
 
-#define _APS_NO_MFC					130
-#define _APS_NEXT_RESOURCE_VALUE	129
-#define _APS_NEXT_COMMAND_VALUE		32771
-#define _APS_NEXT_CONTROL_VALUE		1000
-#define _APS_NEXT_SYMED_VALUE		110
-#endif
-#endif
+	public:
+		Resource();
+		virtual ~Resource();
+
+	public:
+		// ���� ���� �Լ�
+		virtual HRESULT		Load(const std::wstring& path) = 0;
+		const std::wstring&	GetKey() { return key; }
+		const std::wstring& GetPath() { return path; }
+		void				SetKey(std::wstring key) { this->key = key; }
+		void				SetPath(std::wstring key) { this->path = path; }
+	};
+}

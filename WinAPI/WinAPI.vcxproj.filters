@@ -44,12 +44,12 @@
     <Filter Include="Engine\Input">
       <UniqueIdentifier>{5c425030-2b1e-4ff9-bddb-373126c9c241}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{9f2f8891-70f1-4cc9-844e-706f9919a861}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
-      <Filter>main</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
       <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
@@ -94,7 +94,18 @@
     <ClInclude Include="Enums.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="Input.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WinAPI.rc">
@@ -146,6 +157,11 @@
     <ClCompile Include="Application.cpp">
       <Filter>Engine\HighLevelInterface</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Input.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
