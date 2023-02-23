@@ -8,9 +8,12 @@ namespace ks
 	class SceneManager
 	{
 	private:
-		std::vector<Scene*> scenes;
+		static std::vector<Scene*> scenes;
 
 	public:
-
+		static void	Initialize();
+		static void	Update();
+		static void	Render(HDC hdc);
+		static void	Release();
 	};
 }

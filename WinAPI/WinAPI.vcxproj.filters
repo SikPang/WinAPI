@@ -29,6 +29,21 @@
     <Filter Include="Engine\Component">
       <UniqueIdentifier>{2722d638-10a1-476a-bc79-fcdffd02745d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Layer">
+      <UniqueIdentifier>{36266b6f-a93b-4da0-b3eb-0ab44bc985b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Player">
+      <UniqueIdentifier>{16b7c053-4e44-4c8d-9d08-e98a7f3fede8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Scene">
+      <UniqueIdentifier>{47928613-ea7f-4b16-9558-9227919a622f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Time">
+      <UniqueIdentifier>{ed51e39e-999a-4b8d-8b6a-7c65a3916af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{5c425030-2b1e-4ff9-bddb-373126c9c241}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -43,17 +58,11 @@
     <ClInclude Include="WinAPI.h">
       <Filter>main</Filter>
     </ClInclude>
-    <ClInclude Include="ks_Enums.h">
-      <Filter>Engine\Common</Filter>
-    </ClInclude>
     <ClInclude Include="ks_Math.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Engine\GameObject</Filter>
-    </ClInclude>
-    <ClInclude Include="ks_Application.h">
-      <Filter>Engine\HighLevelInterface</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Engine\Common</Filter>
@@ -64,7 +73,28 @@
     <ClInclude Include="Component.h">
       <Filter>Engine\Component</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Layer.h">
+      <Filter>Engine\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Contents\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Engine\HighLevelInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WinAPI.rc">
@@ -89,9 +119,6 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="ks_Application.cpp">
-      <Filter>Engine\HighLevelInterface</Filter>
-    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Engine\Common</Filter>
     </ClCompile>
@@ -101,6 +128,24 @@
     <ClCompile Include="Component.cpp">
       <Filter>Engine\Component</Filter>
     </ClCompile>
-    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Layer.cpp">
+      <Filter>Engine\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Contents\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Engine\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Engine\HighLevelInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp" />
   </ItemGroup>
 </Project>

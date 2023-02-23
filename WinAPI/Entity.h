@@ -1,8 +1,10 @@
 #pragma once
 
 #include <string>
+#include <Windows.h>
+#include "Enums.h"
 
-namespace
+namespace ks
 {
 	class Entity
 	{
@@ -13,7 +15,7 @@ namespace
 		Entity();
 		virtual ~Entity();
 
-		void			SetName(std::wstring& name) { this->name = name; }
+		void			SetName(const std::wstring& name) { this->name = name; }
 		std::wstring&	GetName() { return name; }
 	};
 }

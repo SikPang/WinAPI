@@ -3,7 +3,7 @@
 
 #include "framework.h"
 #include "WinAPI.h"
-#include "ks_Application.h"
+#include "Application.h"
 
 #define MAX_LOADSTRING 100
 

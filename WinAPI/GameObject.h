@@ -6,7 +6,7 @@
 #include "ks_Math.h"
 #include "Component.h"
 
-namespace
+namespace ks
 {
 	class GameObject : public Entity
 	{
@@ -17,6 +17,12 @@ namespace
 
 	public:
 		GameObject();
-		~GameObject();
+		virtual ~GameObject();
+
+	public:
+		virtual void	Initialize();
+		virtual void	Update();
+		virtual void	Render(HDC hdc);
+		virtual void	Release();
 	};
 }

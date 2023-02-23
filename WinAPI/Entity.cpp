@@ -2,5 +2,13 @@
 
 namespace ks
 {
+	Entity::Entity()
+	{
 
+	}
+
+	Entity::~Entity()
+	{
+
+	}
 }
