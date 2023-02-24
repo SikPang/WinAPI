@@ -97,14 +97,23 @@
     <ClInclude Include="Input.h">
       <Filter>Engine\Input</Filter>
     </ClInclude>
-    <ClInclude Include="Resources.h">
+    <ClInclude Include="ks_Resources.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
+    <ClInclude Include="ks_Resource.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
     <ClInclude Include="Image.h">
       <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Engine\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +171,18 @@
     </ClCompile>
     <ClCompile Include="Image.cpp">
       <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ks_Resources.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ks_Resource.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Engine\Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

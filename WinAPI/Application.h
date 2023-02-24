@@ -25,8 +25,9 @@ namespace ks
 		void	Run();
 		void	Update();
 		void	Render();
-		void	Release();
 		HWND	GetHwnd() { return hwnd; }
 		HDC		GetHdc() { return hdc; }
 	};
 }
+
+extern ks::Application application;

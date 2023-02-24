@@ -5,13 +5,13 @@
 #include "Entity.h"
 #include "ks_Math.h"
 #include "Component.h"
+#include "Transform.h"
 
 namespace ks
 {
 	class GameObject : public Entity
 	{
-	private:
-		Vector2	pos;
+	protected:
 		HDC		hdc;
 		std::vector<Component*>	components;
 
@@ -24,6 +24,29 @@ namespace ks
 		virtual void	Update();
 		virtual void	Render(HDC hdc);
 		virtual void	Release();
-		void	SetPos(Vector2 pos) { this->pos = pos; };
+
+	public:
+		template <typename T>
+		T* AddComponent()
+		{
+			T*		component = new T();
+
+			components[(UINT)component->GetType()] = component;
+			return component;
+		}
+
+		template <typename T>
+		T* GetComponent()
+		{
+			for (Component* component : components)
+			{
+				T* castedComp = dynamic_cast<T*>(component);
+
+				if (castedComp == nullptr)
+					return nullptr;
+				else 
+					return castedComp;
+			}
+		}
 	};
 }

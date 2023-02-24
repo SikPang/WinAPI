@@ -1,8 +1,6 @@
 #include "Image.h"
 #include "Application.h"
 
-extern ks::Application application;
-
 namespace ks
 {
 	Image::Image()

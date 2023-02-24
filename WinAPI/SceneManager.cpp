@@ -1,17 +1,22 @@
 #include "SceneManager.h"
 #include "PlayScene.h"
+#include "TitleScene.h"
 #include "Enums.h"
 
 namespace ks
 {
 	std::vector<Scene*> SceneManager::scenes = {};
+	Scene* SceneManager::activeScene = {};
 
 	void SceneManager::Initialize()
 	{
 		scenes.resize((UINT)e_SceneType::Size);
 
+		scenes[(UINT)e_SceneType::Title] = new TitleScene();
 		scenes[(UINT)e_SceneType::Play] = new PlayScene();
-		scenes[(UINT)e_SceneType::Play]->SetName(L"PLAY");
+
+		// 현재 활성화된 씬
+		activeScene = scenes[(UINT)e_SceneType::Play];
 
 		for (Scene* scene : scenes)
 		{
@@ -24,24 +29,12 @@ namespace ks
 
 	void SceneManager::Update()
 	{
-		for (Scene* scene : scenes)
-		{
-			if (scene == nullptr)
-				continue;
-
-			scene->Update();
-		}
+		activeScene->Update();
 	}
 
 	void SceneManager::Render(HDC hdc)
 	{
-		for (Scene* scene : scenes)
-		{
-			if (scene == nullptr)
-				continue;
-
-			scene->Render(hdc);
-		}
+		activeScene->Render(hdc);
 	}
 
 	void SceneManager::Release()
@@ -53,5 +46,13 @@ namespace ks
 
 			scene->Release();
 		}
+	}
+
+	void SceneManager::LoadScene(e_SceneType type)
+	{
+		activeScene->OnExit();
+
+		activeScene = scenes[(UINT)type];
+		activeScene->OnEnter();
 	}
 }

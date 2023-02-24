@@ -20,6 +20,8 @@ namespace ks
 		virtual void	Update();
 		virtual void	Render(HDC hdc);
 		virtual void	Release();
-		void AddGameObject(GameObject* newObject, e_LayerType layer);
+		void			AddGameObject(GameObject* newObject, e_LayerType layer);
+		virtual void	OnEnter();
+		virtual void	OnExit();
 	};
 }

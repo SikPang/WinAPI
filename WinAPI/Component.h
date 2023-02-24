@@ -6,11 +6,20 @@ namespace ks
 {
 	class Component : public Entity
 	{
+	private:
+		const e_ComponentType	type;
 
 	public:
-		void	Initialize();
-		void	Update();
-		void	Render(HDC hdc);
-		void	Release();
+		Component(e_ComponentType type);
+		~Component();
+
+	public:
+		virtual void	Initialize();
+		virtual void	Update();
+		virtual void	Render(HDC hdc);
+		virtual void	Release();
+
+	public:
+		e_ComponentType	GetType(){ return type; };
 	};
 }

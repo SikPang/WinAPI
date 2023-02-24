@@ -26,10 +26,10 @@ struct Vector2
 
 	}
 
-	Vector2(Vector2& instance)
-		: x(instance.x)
-		, y(instance.y)
-	{
+	//Vector2(Vector2& instance)
+	//	: x(instance.x)
+	//	, y(instance.y)
+	//{
 
-	}
+	//}
 };

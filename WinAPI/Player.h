@@ -1,13 +1,16 @@
 #pragma once
 
 #include "GameObject.h"
+#include "Image.h"
+#include "Transform.h"
 
 namespace ks
 {
 	class Player : public GameObject
 	{
 	private:
-		Vector2 pos;
+		Image*		image;
+		Transform*	transform;
 
 	public:
 		Player();

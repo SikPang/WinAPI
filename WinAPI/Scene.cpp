@@ -48,4 +48,14 @@ namespace ks
 	{
 		layers[(UINT)layer].AddGameObject(newObject);
 	}
+
+	void Scene::OnEnter()
+	{
+
+	}
+
+	void Scene::OnExit()
+	{
+
+	}
 }

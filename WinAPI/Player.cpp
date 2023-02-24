@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "Time.h"
 #include "Input.h"
-#include "Resources.h"
+#include "ks_Resources.h"
 #include "Image.h"
 
 namespace ks
@@ -18,17 +18,24 @@ namespace ks
 	
 	void Player::Initialize()
 	{
-		Image* playerImage = Resources::Load<Image>(L"playerImage", L"..\\Resources\\player.bmp");
-
 		GameObject::Initialize();
 
-		pos.x = 200;
-		pos.y = 200;
+		image = Resources::Load<Image>(L"playerImage", L"..\\Resources\\player.bmp");
+
+		transform = GetComponent<Transform>();
+		if (transform != nullptr)
+			transform->SetPos(Vector2(200, 200));
 	}
 	
 	void Player::Update()
 	{
 		GameObject::Update();
+
+		transform = GetComponent<Transform>();
+		if (transform == nullptr)
+			return;
+
+		Vector2 pos = transform->GetPos();
 
 		if (Input::GetKeyState(e_KeyCode::A) == e_KeyState::Pressed)
 		{
@@ -49,21 +56,20 @@ namespace ks
 		{
 			pos.y += 200.f * Time::GetDeltaTime();
 		}
+
+		transform->SetPos(pos);
 	}
 	
 	void Player::Render(HDC hdc)
 	{
-		GameObject::Render(hdc);
+		BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 
-		HBRUSH brush = CreateSolidBrush(RGB(128, 128, 128));
-		HBRUSH prev = (HBRUSH)SelectObject(hdc, brush);
-		Rectangle(hdc, pos.x, pos.y, pos.x + 100, pos.y + 100);
-		SelectObject(hdc, prev);
-		DeleteObject(brush);
+		GameObject::Render(hdc);
 	}
 	
 	void Player::Release()
 	{
+		delete image;
 		GameObject::Release();
 	}
 }

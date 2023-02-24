@@ -3,8 +3,10 @@
 namespace ks
 {
     GameObject::GameObject()
+        :hdc(NULL)
     {
-
+        components.resize((UINT)e_ComponentType::Size);
+        AddComponent<Transform>();
     }
 
     GameObject::~GameObject()

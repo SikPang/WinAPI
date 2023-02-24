@@ -1,5 +1,5 @@
 #pragma once
-#include "Resource.h"
+#include "ks_Resource.h"
 
 
 namespace ks
@@ -17,6 +17,10 @@ namespace ks
 		~Image();
 
 	public:
-		HRESULT		Load(const std::wstring& path) override;
+		HRESULT	Load(const std::wstring& path) override;
+		HBITMAP	GetBitmap() { return bitmap; }
+		HDC		GetHdc() { return hdc; }
+		UINT	GetWitdh() { return width; }
+		UINT	GetHeight() { return height; }
 	};
 }

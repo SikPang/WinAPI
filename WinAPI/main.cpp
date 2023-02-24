@@ -4,6 +4,8 @@
 #include "framework.h"
 #include "WinAPI.h"
 #include "Application.h"
+#include "SceneManager.h"
+#include "ks_Resources.h"
 
 #define MAX_LOADSTRING 100
 
@@ -27,6 +29,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
+
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//_CrtSetBreakAlloc(217); // 추가
 
 	// TODO: 여기에 코드를 입력합니다.
 
@@ -69,6 +74,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		// 종료 버튼
 	}
 
+	ks::SceneManager::Release();
+	ks::Resources::Release();
 	return (int) msg.wParam;
 }
 

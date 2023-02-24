@@ -7,6 +7,7 @@ namespace ks
 	class Time
 	{
 	private:
+		static double second;
 		static double deltaTime;
 		static LARGE_INTEGER cpuFrequency;
 		static LARGE_INTEGER prevFrequency;

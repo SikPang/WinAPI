@@ -14,7 +14,8 @@ namespace ks
 
 	Application::~Application()
 	{
-
+		Time::Release();
+		SceneManager::Release();
 	}
 
 	void Application::Initialize(HWND hwnd)
@@ -64,11 +65,5 @@ namespace ks
 
 		// 백버퍼의 그림을 원본에 그려줌
 		BitBlt(hdc, 0, 0, width, height, backHdc, 0, 0, SRCCOPY);
-	}
-
-	void Application::Release()
-	{
-		Time::Release();
-		SceneManager::Release();
 	}
 }

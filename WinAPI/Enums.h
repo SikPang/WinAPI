@@ -19,4 +19,14 @@ namespace ks
 		UI,
 		Size
 	};
+
+	enum class e_ComponentType
+	{
+		Transform,
+		Collider,
+		SpriteRenderer,
+		Animator,
+		Audio,
+		Size
+	};
 }
