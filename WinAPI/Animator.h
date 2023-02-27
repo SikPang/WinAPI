@@ -59,7 +59,7 @@ namespace ks
 		void CreateAnimation(const std::wstring& name
 			, Image* sheet
 			, Vector2 leftTop
-			, UINT coulmn, UINT row, UINT spriteLength
+			, UINT col, UINT row, UINT spriteLength
 			, Vector2 offset, float duration);	//완성된 스프라이트 시트를 지정해서 애니메이션 제작하는 함수
 		void	CreateAnimations();	// 폴더에 들어있는 스프라이트들을 이용해서 애니메이션 제작해주는 함수
 		void	Play(const std::wstring& name, bool loop);

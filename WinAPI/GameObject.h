@@ -29,10 +29,11 @@ namespace ks
 		template <typename T>
 		T* AddComponent()
 		{
-			T*		component = new T();
+			T*		comp = new T();
 
-			components[(UINT)component->GetType()] = component;
-			return component;
+			components[(UINT)comp->GetType()] = comp;
+			comp->SetGameObject(this);
+			return comp;
 		}
 
 		template <typename T>

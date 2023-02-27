@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "ks_Resources.h"
 #include "Image.h"
+#include "Animator.h"
 
 namespace ks
 {
@@ -18,13 +19,19 @@ namespace ks
 	
 	void Player::Initialize()
 	{
-		GameObject::Initialize();
-
 		image = Resources::Load<Image>(L"playerImage", L"..\\Resources\\player.bmp");
+
+		Animator* animator = AddComponent<Animator>();
+		animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
+		animator->CreateAnimation(L"Idle", image, Vector2(0.0f, 113.0f * 5), 16, 8, 16, Vector2::Zero, 0.1);
+		
+		animator->Play(L"Idle", true);
 
 		transform = GetComponent<Transform>();
 		if (transform != nullptr)
 			transform->SetPos(Vector2(200, 200));
+
+		GameObject::Initialize();
 	}
 	
 	void Player::Update()

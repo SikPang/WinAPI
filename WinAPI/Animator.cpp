@@ -1,3 +1,4 @@
+#include <map>
 #include "Animator.h"
 
 namespace ks
@@ -13,7 +14,7 @@ namespace ks
 
 	Animator::~Animator()
 	{
-		for (auto animation : animations)
+		for (auto &animation : animations)
 		{
 			delete animation.second;
 			animation.second = nullptr;
@@ -27,12 +28,23 @@ namespace ks
 	
 	void Animator::Update()
 	{
-	
+		if (activeAnimation)
+		{
+			activeAnimation->Update();
+
+			if (isLoop && activeAnimation->IsComplete())
+			{
+				activeAnimation->Reset();
+			}
+		}
 	}
 	
 	void Animator::Render(HDC hdc)
 	{
-	
+		if (activeAnimation)
+		{
+			activeAnimation->Render(hdc);
+		}
 	}
 	
 	void Animator::Release()
@@ -40,9 +52,19 @@ namespace ks
 	
 	}
 
-	void Animator::CreateAnimation(const std::wstring& name, Image* sheet, Vector2 leftTop, UINT coulmn, UINT row, UINT spriteLength, Vector2 offset, float duration)
+	void Animator::CreateAnimation(const std::wstring& name, Image* sheet, Vector2 leftTop, UINT col, UINT row, UINT spriteLength, Vector2 offset, float duration)
 	{
+		Animation* newAnimation = FindAnimation(name);
 
+		if (newAnimation != nullptr)
+			return;
+
+		newAnimation = new Animation();
+		newAnimation->Create(sheet, leftTop, col, row, spriteLength, offset, duration);
+		newAnimation->SetName(name);
+		newAnimation->SetAnimator(this);
+
+		animations.insert(std::make_pair(name, newAnimation));
 	}
 
 	void Animator::CreateAnimations()
@@ -52,12 +74,18 @@ namespace ks
 
 	void Animator::Play(const std::wstring& name, bool loop)
 	{
-
+		activeAnimation = FindAnimation(name);
+		isLoop = loop;
 	}
 
 	Animation* Animator::FindAnimation(const std::wstring& name)
 	{
-		return nullptr;
+		std::map<std::wstring, Animation*>::iterator iter = animations.find(name);
+
+		if (iter == animations.end())
+			return nullptr;
+		else
+			return iter->second;
 	}
 
 	Animator::Events* Animator::FindEvents(const std::wstring& name)

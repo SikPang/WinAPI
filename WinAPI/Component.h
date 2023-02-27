@@ -4,9 +4,13 @@
 
 namespace ks
 {
+	// 전방 선언, 헤더 상호 참조 방지
+	class GameObject;
+
 	class Component : public Entity
 	{
 	private:
+		GameObject* owner;
 		const e_ComponentType	type;
 
 	public:
@@ -21,5 +25,7 @@ namespace ks
 
 	public:
 		e_ComponentType	GetType(){ return type; };
+		void SetGameObject(GameObject* owner) { this->owner = owner; }
+		GameObject* GetGameObject() { return owner; }
 	};
 }
