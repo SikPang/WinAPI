@@ -3,12 +3,14 @@
 #include <vector>
 #include "Entity.h"
 #include "Layer.h"
+#include "Image.h"
 
 namespace ks
 {
 	class Scene : public Entity
 	{
-	private:
+	protected:
+		Image* image;
 		std::vector<Layer> layers;
 
 	public:

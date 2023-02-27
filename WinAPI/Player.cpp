@@ -62,7 +62,10 @@ namespace ks
 	
 	void Player::Render(HDC hdc)
 	{
-		BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
+		TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWitdh(), image->GetHeight(),
+			image->GetHdc(), 0, 0, image->GetWitdh(), image->GetHeight(), RGB(255, 0, 255));
+
+		//BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 
 		GameObject::Render(hdc);
 	}

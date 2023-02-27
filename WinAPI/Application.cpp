@@ -18,6 +18,15 @@ namespace ks
 		SceneManager::Release();
 	}
 
+	void Application::clear()
+	{
+		HBRUSH gray = CreateSolidBrush(RGB(121, 121, 121));
+		HBRUSH old = (HBRUSH)SelectObject(backHdc, gray);
+		Rectangle(backHdc, -1, -1, 1602, 902);
+		SelectObject(backHdc, old);
+		DeleteObject(gray);
+	}
+
 	void Application::Initialize(HWND hwnd)
 	{
 		this->hwnd = hwnd;
@@ -56,11 +65,10 @@ namespace ks
 
 	void Application::Render()
 	{
-		Rectangle(backHdc, -1, -1, 1602, 902);
-		
+		clear();
+
 		Time::Render(backHdc);
 		Input::Render(backHdc);
-
 		SceneManager::Render(backHdc);
 
 		// 백버퍼의 그림을 원본에 그려줌

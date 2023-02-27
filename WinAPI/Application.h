@@ -16,6 +16,8 @@ namespace ks
 		UINT	width;
 		UINT	height;
 
+		void	clear();
+
 	public:
 		Application();
 		~Application();

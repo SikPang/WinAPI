@@ -23,3 +23,5 @@ namespace ks
 		void	Release() override;
 	};
 }
+
+#pragma comment(lib, "Msimg32.lib")

@@ -1,7 +1,8 @@
 #include "PlayScene.h"
 #include "Input.h"
 #include "SceneManager.h"
-#include <iostream>
+#include "ks_Resources.h"
+
 namespace ks
 {
 	PlayScene::PlayScene()
@@ -16,10 +17,13 @@ namespace ks
 
 	void PlayScene::Initialize()
 	{
+		// 씬에 플레이어 추가
 		player = new Player();
 		player->SetName(L"Player");
-		//player->SetPos(Vector2(0.0f, 0.0f));
 		AddGameObject(player, e_LayerType::Player);
+
+		// 배경
+		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_play.bmp");
 
 		Scene::Initialize();
 	}
@@ -37,6 +41,8 @@ namespace ks
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+
+		BitBlt(hdc, 0, 0, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 	}
 	
 	void PlayScene::Release()

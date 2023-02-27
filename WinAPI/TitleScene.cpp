@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "Input.h"
 #include "SceneManager.h"
+#include "ks_Resources.h"
 
 namespace ks
 {
@@ -17,6 +18,8 @@ namespace ks
 	void TitleScene::Initialize()
 	{
 		Scene::Initialize();
+
+		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_title.bmp");
 	}
 
 	void TitleScene::Update()
@@ -32,6 +35,8 @@ namespace ks
 	void TitleScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+
+		BitBlt(hdc, 0, 0, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 	}
 
 	void TitleScene::Release()
