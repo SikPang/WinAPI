@@ -9,7 +9,10 @@ namespace ks
 
 	Layer::~Layer()
 	{
-
+		for (GameObject* gameObject : gameObjects)
+		{
+			delete gameObject;
+		}
 	}
 
 	void Layer::Initialize()

@@ -8,7 +8,7 @@ namespace ks
 {
 	class Player : public GameObject
 	{
-	private:
+	protected:
 		Image*		image;
 		Transform*	transform;
 

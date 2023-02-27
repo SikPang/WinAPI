@@ -72,7 +72,6 @@ namespace ks
 	
 	void Player::Release()
 	{
-		delete image;
 		GameObject::Release();
 	}
 }

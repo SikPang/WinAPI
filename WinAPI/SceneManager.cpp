@@ -44,7 +44,8 @@ namespace ks
 			if (scene == nullptr)
 				continue;
 
-			scene->Release();
+			delete scene;
+			scene = nullptr;
 		}
 	}
 

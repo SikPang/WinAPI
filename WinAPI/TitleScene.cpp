@@ -19,7 +19,7 @@ namespace ks
 	{
 		Scene::Initialize();
 
-		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_title.bmp");
+		image = Resources::Load<Image>(L"bgTitleImage", L"..\\Resources\\bg_title.bmp");
 	}
 
 	void TitleScene::Update()

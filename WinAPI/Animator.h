@@ -5,6 +5,7 @@
 #include "Component.h"
 #include "Animation.h"
 #include "Image.h"
+#include "ks_Math.h"
 
 namespace ks
 {
@@ -42,6 +43,7 @@ namespace ks
 		std::map<std::wstring, Event*> events;
 		Image* spriteSheet;
 		Animation* activeAnimation;
+		bool isLoop;
 
 	public:
 		Animator();
@@ -54,8 +56,12 @@ namespace ks
 		void	Release() override;
 
 	public:
-		void	CreateAnimation();
-		void	CreateAnimations();
+		void CreateAnimation(const std::wstring& name
+			, Image* sheet
+			, Vector2 leftTop
+			, UINT coulmn, UINT row, UINT spriteLength
+			, Vector2 offset, float duration);	//완성된 스프라이트 시트를 지정해서 애니메이션 제작하는 함수
+		void	CreateAnimations();	// 폴더에 들어있는 스프라이트들을 이용해서 애니메이션 제작해주는 함수
 		void	Play(const std::wstring& name, bool loop);
 		Animation* FindAnimation(const std::wstring& name);
 		Events* FindEvents(const std::wstring& name);

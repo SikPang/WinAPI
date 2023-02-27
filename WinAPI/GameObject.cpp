@@ -11,7 +11,10 @@ namespace ks
 
     GameObject::~GameObject()
     {
-
+        for (Component* component : components)
+        {
+            delete component;
+        }
     }
 
     void GameObject::Initialize()
