@@ -1,5 +1,9 @@
 #include <map>
+#include <vector>
+#include <filesystem>
+#include "Image.h"
 #include "Animator.h"
+#include "ks_Resources.h"
 
 namespace ks
 {
@@ -67,9 +71,35 @@ namespace ks
 		animations.insert(std::make_pair(name, newAnimation));
 	}
 
-	void Animator::CreateAnimations()
+	void Animator::CreateAnimations(const std::wstring& path, Vector2 offset, float duration)
 	{
+		UINT	width = 0;
+		UINT	height = 0;
+		UINT	fileCount = 0;
 
+		std::filesystem::path fs(path);
+		std::vector<Image*> images = {};
+		for (auto& p : std::filesystem::recursive_directory_iterator(path))
+		{
+			std::wstring fileName = p.path().filename();
+			std::wstring fullName = path + L"\\" + fileName;
+
+			if (p.path().extension() == L".png")
+				continue;
+
+			Image* image = Resources::Load<Image>(fileName, fullName);
+			images.push_back(image);
+
+			if (width < image->GetWidth())
+				width = image->GetWidth();
+			if (height < image->GetHeight())
+				height = image->GetHeight();
+			++fileCount;
+		}
+
+		std::wstring key = (std::wstring)fs.parent_path().filename() + (std::wstring)fs.filename();
+
+		spriteSheet = Image::Create(key, width * fileCount, height);
 	}
 
 	void Animator::Play(const std::wstring& name, bool loop)

@@ -26,7 +26,7 @@ namespace ks
 	{
 		Scene::Update();
 
-		if (Input::GetKeyState(e_KeyCode::N) == e_KeyState::Down)
+		if (Input::GetKeyDown(e_KeyCode::N))
 		{
 			SceneManager::LoadScene(e_SceneType::Play);
 		}
@@ -34,9 +34,11 @@ namespace ks
 
 	void TitleScene::Render(HDC hdc)
 	{
-		Scene::Render(hdc);
+		// 씬의 배경 화면
+		BitBlt(hdc, 0, 0, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 
-		BitBlt(hdc, 0, 0, image->GetWitdh(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
+		// 씬의 오브젝트
+		Scene::Render(hdc);
 	}
 
 	void TitleScene::Release()

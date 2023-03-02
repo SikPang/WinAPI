@@ -3,14 +3,32 @@
 #include "GameObject.h"
 #include "Image.h"
 #include "Transform.h"
+#include "Animator.h"
 
 namespace ks
 {
 	class Player : public GameObject
 	{
-	protected:
+	public:
+		enum class e_PlayerState
+		{
+			Move,
+			Attack,
+			Death,
+			Idle
+		};
+
+	private:
 		Image*		image;
 		Transform*	transform;
+		Animator*	animator;
+		e_PlayerState state;
+
+	private:
+		void	Move();
+		void	Attack();
+		void	Death();
+		void	Idle();
 
 	public:
 		Player();

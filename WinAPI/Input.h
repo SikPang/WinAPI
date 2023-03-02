@@ -39,9 +39,20 @@ namespace ks
 		static void Update();
 		static void Render(HDC hdc);
 		static void Release();
-		inline static e_KeyState GetKeyState(e_KeyCode keyCode)
+
+		static __forceinline bool GetKey(e_KeyCode keyCode)
 		{
-			return keys[(UINT)keyCode].keyState;
+			return keys[(UINT)keyCode].keyState == e_KeyState::Pressed;
+		}
+
+		static __forceinline bool GetKeyDown(e_KeyCode keyCode)
+		{
+			return keys[(UINT)keyCode].keyState == e_KeyState::Down;
+		}
+
+		static __forceinline bool GetKeyUp(e_KeyCode keyCode)
+		{
+			return keys[(UINT)keyCode].keyState == e_KeyState::Up;
 		}
 	};
 }

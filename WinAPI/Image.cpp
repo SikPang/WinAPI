@@ -1,5 +1,6 @@
 #include "Image.h"
 #include "Application.h"
+#include "ks_Resources.h"
 
 namespace ks
 {
@@ -39,5 +40,30 @@ namespace ks
 		DeleteObject(oldBitmap);
 
 		return S_OK;
+	}
+
+	Image* Image::Create(const std::wstring& name, UINT width, UINT height)
+	{
+		if (width == 0 || height == 0)
+			return nullptr;
+
+		Image* image = Resources::Find<Image>(name);
+		if (image != nullptr)
+			return image;
+
+		image = new Image();
+		HDC mainHDC = application.GetHdc();
+
+		image->bitmap = CreateCompatibleBitmap(mainHDC, width, height);
+		image->hdc = CreateCompatibleDC(mainHDC);
+		image->width = width;
+		image->height = height;
+		image->SetKey(name);
+		
+		Resources::Insert<Image>(name, image);
+
+		DeleteObject((HBITMAP)SelectObject(image->hdc, image->bitmap));
+
+		return image;
 	}
 }

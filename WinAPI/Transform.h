@@ -8,7 +8,7 @@ namespace ks
 	{
 	private:
 		Vector2	pos;
-		Vector2	size;
+		Vector2	scale;
 
 	public:
 		Transform();
@@ -22,8 +22,8 @@ namespace ks
 
 	public:
 		void	SetPos(Vector2 pos) { this->pos = pos; };
-		void	SetSize(Vector2 size) { this->size = size; };
+		void	SetScale(Vector2 scale) { this->scale = scale; };
 		Vector2	GetPos() { return pos; };
-		Vector2	GetSize() { return size; };
+		Vector2	GetScale() { return scale; };
 	};
 }

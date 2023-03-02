@@ -22,7 +22,7 @@ namespace ks
 	{
 		HBRUSH gray = CreateSolidBrush(RGB(121, 121, 121));
 		HBRUSH old = (HBRUSH)SelectObject(backHdc, gray);
-		Rectangle(backHdc, -1, -1, 1602, 902);
+		Rectangle(backHdc, -1, -1, 1282, 722);
 		SelectObject(backHdc, old);
 		DeleteObject(gray);
 	}
@@ -31,8 +31,8 @@ namespace ks
 	{
 		this->hwnd = hwnd;
 		hdc = GetDC(hwnd);
-		width = 1600;
-		height = 900;
+		width = 1280;
+		height = 720;
 
 		RECT rect = { 0, 0, width, height };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);

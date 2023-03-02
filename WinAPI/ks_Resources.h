@@ -53,6 +53,12 @@ namespace ks
 			}
 		}
 
+		template <typename T>
+		static void Insert(const std::wstring& key, T* resource)
+		{
+			resources.insert(std::make_pair(key, resource));
+		}
+
 		static void Release()
 		{
 			for (auto pair : resources)

@@ -46,12 +46,19 @@ namespace ks
 	void Animation::Render(HDC hdc)
 	{
 		Transform* transform = animator->GetGameObject()->GetComponent<Transform>();
+		Vector2 scale = transform->GetScale();
 
-		TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y
-			, spriteSheet[spriteIndex].size.x, spriteSheet[spriteIndex].size.y
+		// 크기 조정 안 됨 3,4번째 인자에 배수
+		TransparentBlt(hdc
+			, transform->GetPos().x + spriteSheet[spriteIndex].offset.x
+			, transform->GetPos().y + spriteSheet[spriteIndex].offset.y
+			, spriteSheet[spriteIndex].size.x * scale.x
+			, spriteSheet[spriteIndex].size.y * scale.y
 			, sheetImage->GetHdc()
-			, spriteSheet[spriteIndex].leftTop.x, spriteSheet[spriteIndex].leftTop.y
-			, spriteSheet[spriteIndex].size.x, spriteSheet[spriteIndex].size.y,
+			, spriteSheet[spriteIndex].leftTop.x
+			, spriteSheet[spriteIndex].leftTop.y
+			, spriteSheet[spriteIndex].size.x
+			, spriteSheet[spriteIndex].size.y,
 			RGB(255, 0, 255));
 	}
 	
@@ -60,7 +67,7 @@ namespace ks
 		sheetImage = sheet;
 
 		Vector2 size = Vector2::One;
-		size.x = sheetImage->GetWitdh() / (float)col;
+		size.x = sheetImage->GetWidth() / (float)col;
 		size.y = sheetImage->GetHeight() / (float)row;
 
 		for (int i = 0; i < spriteLength; ++i)

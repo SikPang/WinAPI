@@ -1,7 +1,6 @@
 #pragma once
 #include "ks_Resource.h"
 
-
 namespace ks
 {
 	class Image : public Resource
@@ -20,7 +19,8 @@ namespace ks
 		HRESULT	Load(const std::wstring& path) override;
 		HBITMAP	GetBitmap() { return bitmap; }
 		HDC		GetHdc() { return hdc; }
-		UINT	GetWitdh() { return width; }
+		UINT	GetWidth() { return width; }
 		UINT	GetHeight() { return height; }
+		static Image* Create(const std::wstring& name, UINT width, UINT height);
 	};
 }
