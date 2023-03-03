@@ -64,6 +64,8 @@ namespace ks
 
 		DeleteObject((HBITMAP)SelectObject(image->hdc, image->bitmap));
 
+		Rectangle(image->GetHdc(), -1, -1, image->width + 1, image->height + 1);
+
 		return image;
 	}
 }

@@ -3,6 +3,10 @@
 #include "Input.h"
 #include "ks_Resources.h"
 #include "Image.h"
+#include "Collider.h"
+#include "Bullet.h"
+#include "SceneManager.h"
+#include "Enums.h"
 
 namespace ks
 {
@@ -24,11 +28,15 @@ namespace ks
 		animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
 		animator->CreateAnimation(L"Idle", image, Vector2(0.0f, 113.0f * 5), 16, 8, 16, Vector2::Zero, 0.1);
 
-		animator->CreateAnimations(L"..\\Resources\\Player", Vector2::Zero, 0.1f);
-
 		animator->Play(L"Idle", true);
 
+		animator->CreateAnimations(L"..\\Resources\\Player", Vector2::Zero, 0.1f);
+		//animator->Play(L"ResourcesPlayer", true);
+
 		transform = GetComponent<Transform>();
+
+		Collider* collider = AddComponent<Collider>();
+		collider->SetCenter(Vector2(-60.f, -80.f));
 
 		state = e_PlayerState::Idle;
 		
@@ -80,7 +88,7 @@ namespace ks
 			|| Input::GetKeyUp(e_KeyCode::W)
 			|| Input::GetKeyUp(e_KeyCode::S))
 		{
-			state = e_PlayerState::Move;
+			state = e_PlayerState::Idle;
 		}
 
 		animator->Play(L"GoRight", true);
@@ -112,7 +120,18 @@ namespace ks
 	
 	void Player::Attack()
 	{
-	
+		if (Input::GetKey(e_KeyCode::K))
+		{
+			Bullet* newBullet = new Bullet();
+			newBullet->GetComponent<Transform>()->SetPos(transform->GetPos());
+			SceneManager::GetActiveScene()->AddGameObject(newBullet, e_LayerType::Bullet);
+		}
+
+		if (Input::GetKeyUp(e_KeyCode::K))
+		{
+			state = e_PlayerState::Idle;
+			animator->Play(L"Idle", true);
+		}
 	}
 	
 	void Player::Death()
@@ -128,6 +147,12 @@ namespace ks
 			|| Input::GetKeyDown(e_KeyCode::S))
 		{
 			state = e_PlayerState::Move;
+			animator->Play(L"Idle", true);
+		}
+
+		if (Input::GetKeyDown(e_KeyCode::K))
+		{
+			state = e_PlayerState::Attack;
 			animator->Play(L"Idle", true);
 		}
 	}

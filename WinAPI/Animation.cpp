@@ -47,11 +47,16 @@ namespace ks
 	{
 		Transform* transform = animator->GetGameObject()->GetComponent<Transform>();
 		Vector2 scale = transform->GetScale();
+		Vector2 pos = transform->GetPos();
+
+		// 캐릭터의 발을 기준으로 포지션을 계산
+		pos += spriteSheet[spriteIndex].offset;
+		pos.x -= spriteSheet[spriteIndex].size.x / 2.0f;
+		pos.y -= spriteSheet[spriteIndex].size.y;
 
 		// 크기 조정 안 됨 3,4번째 인자에 배수
 		TransparentBlt(hdc
-			, transform->GetPos().x + spriteSheet[spriteIndex].offset.x
-			, transform->GetPos().y + spriteSheet[spriteIndex].offset.y
+			, pos.x, pos.y
 			, spriteSheet[spriteIndex].size.x * scale.x
 			, spriteSheet[spriteIndex].size.y * scale.y
 			, sheetImage->GetHdc()

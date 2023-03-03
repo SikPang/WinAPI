@@ -100,6 +100,18 @@ namespace ks
 		std::wstring key = (std::wstring)fs.parent_path().filename() + (std::wstring)fs.filename();
 
 		spriteSheet = Image::Create(key, width * fileCount, height);
+
+		int index = 0;
+		for (Image* image : images)
+		{
+			int centerX = (width - image->GetWidth()) / 2;
+			int centerY = height - image->GetHeight();
+
+			BitBlt(spriteSheet->GetHdc(), width * index + centerX, centerY, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
+			++index;
+		}
+
+		CreateAnimation(key, spriteSheet, Vector2::Zero, index, 1, index, offset, duration);
 	}
 
 	void Animator::Play(const std::wstring& name, bool loop)

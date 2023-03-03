@@ -39,5 +39,37 @@ namespace ks
 
 		Vector2(Vector2&&) = default;
 		Vector2& operator=(Vector2&&) = default;
+
+		Vector2& operator+(Vector2& instance)
+		{
+			Vector2 temp;
+
+			temp.x = this->x + instance.x;
+			temp.y = this->y + instance.y;
+			return (temp);
+		}
+
+		Vector2& operator-(Vector2& instance)
+		{
+			Vector2 temp;
+
+			temp.x = this->x - instance.x;
+			temp.y = this->y - instance.y;
+			return (temp);
+		}
+
+		void operator+=(Vector2& instance)
+		{
+			this->x += instance.x;
+			this->y += instance.y;
+			return;
+		}
+
+		void operator-=(Vector2& instance)
+		{
+			this->x -= instance.x;
+			this->y -= instance.y;
+			return;
+		}
 	};
 }

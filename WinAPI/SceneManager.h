@@ -17,5 +17,6 @@ namespace ks
 		static void	Render(HDC hdc);
 		static void	Release();
 		static void	LoadScene(e_SceneType type);
+		static Scene* GetActiveScene() { return activeScene; }
 	};
 }

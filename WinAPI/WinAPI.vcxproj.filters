@@ -47,6 +47,9 @@
     <Filter Include="Engine\Resource">
       <UniqueIdentifier>{9f2f8891-70f1-4cc9-844e-706f9919a861}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents\Bullet">
+      <UniqueIdentifier>{c8694c38-4a39-437b-ad62-56cb0b923c06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -120,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="Animator.h">
       <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Contents\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +204,12 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Contents\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

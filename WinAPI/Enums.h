@@ -15,6 +15,7 @@ namespace ks
 		BG,
 		Monster,
 		Player,
+		Bullet,
 		Effect,
 		UI,
 		Size
@@ -23,9 +24,9 @@ namespace ks
 	enum class e_ComponentType
 	{
 		Transform,
-		Collider,
 		SpriteRenderer,
 		Animator,
+		Collider,
 		Audio,
 		Size
 	};
