@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Time.h"
 #include "Input.h"
+#include "CollisionManager.h"
 
 namespace ks
 {
@@ -61,6 +62,7 @@ namespace ks
 		Time::Update();
 		Input::Update();
 		SceneManager::Update();
+		CollisionManager::Update();
 	}
 
 	void Application::Render()

@@ -2,6 +2,8 @@
 #include "Input.h"
 #include "SceneManager.h"
 #include "ks_Resources.h"
+#include "Enemy.h"
+#include "CollisionManager.h"
 
 namespace ks
 {
@@ -19,9 +21,12 @@ namespace ks
 	{
 		// 씬에 플레이어 추가
 		player = new Player();
-		player->SetName(L"Player");
 		AddGameObject(player, e_LayerType::Player);
 
+		Enemy* enemy = new Enemy();
+		AddGameObject(enemy, e_LayerType::Enemy);
+
+		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
 		// 배경
 		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_play.bmp");
 

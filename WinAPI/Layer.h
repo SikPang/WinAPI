@@ -21,5 +21,6 @@ namespace ks
 		virtual void	Render(HDC hdc);
 		virtual void	Release();
 		void AddGameObject(GameObject* newObject);
+		const std::vector<GameObject*> GetGameObjects() { return gameObjects; };
 	};
 }

@@ -1,4 +1,25 @@
-﻿  Bullet.cpp
+﻿  Animation.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(34,29): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(66,35): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(65,35): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(64,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(63,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(61,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(60,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(59,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(59,9): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Animation.cpp(78,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Animator.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Application.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Application.cpp(38,23): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Application.cpp(38,30): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+  Bullet.cpp
 C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\Song\source\repos\WinAPI\WinAPI\Bullet.cpp(27,18): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -6,5 +27,67 @@ C:\Users\Song\source\repos\WinAPI\WinAPI\Bullet.cpp(42,50): warning C4244: '인�
 C:\Users\Song\source\repos\WinAPI\WinAPI\Bullet.cpp(42,36): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\Song\source\repos\WinAPI\WinAPI\Bullet.cpp(42,26): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\Song\source\repos\WinAPI\WinAPI\Bullet.cpp(42,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Collider.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Collider.cpp(39,54): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Collider.cpp(39,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Collider.cpp(39,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Collider.cpp(39,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CollisionManager.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Component.cpp
+  Enemy.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Enemy.cpp(28,92): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Enemy.cpp(29,101): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Enemy.cpp(73,65): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Enemy.cpp(73,42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Entity.cpp
+  GameObject.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Layer.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  PlayScene.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(28,92): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(29,101): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(71,65): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(71,42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(100,19): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(105,19): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(110,19): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\Player.cpp(115,19): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  SceneManager.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TitleScene.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Transform.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+C:\Users\Song\source\repos\WinAPI\WinAPI\Scene.cpp(54): warning C4172: 지역 변수 또는 임시의 주소를 반환하고 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Collider>': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(49): warning C4172: 지역 변수 또는 임시: temp의 주소를 반환하고 있습니다.
+C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
 C:\Users\Song\source\repos\WinAPI\WinAPI\GameObject.h(51): warning C4715: 'ks::GameObject::GetComponent<ks::Transform>': 모든 제어 경로에서 값을 반환하지는 않습니다.
   WinAPI.vcxproj -> C:\Users\Song\source\repos\WinAPI\x64\Debug\WinAPI.exe

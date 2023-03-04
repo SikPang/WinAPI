@@ -12,7 +12,6 @@ namespace ks
 	private:
 		Vector2	center;
 		Vector2 size;
-		Vector2	scale;
 		Vector2	pos;
 
 	public:
@@ -24,8 +23,11 @@ namespace ks
 		void	Update() override;
 		void	Render(HDC hdc) override;
 		void	Release() override;
+
+	public:
 		void	SetCenter(Vector2 center) { this->center = center; }
 		void	SetSize(Vector2 size) { this->size = size; }
-		void	SetScale(Vector2 scale) { this->scale = scale; }
+		Vector2	GetPos() { return pos; }
+		Vector2	GetSize() { return size; }
 	};
 }

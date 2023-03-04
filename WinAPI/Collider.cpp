@@ -6,9 +6,8 @@ namespace ks
 	Collider::Collider()
 		: Component(e_ComponentType::Collider)
 		, center(Vector2::Zero)
-		, scale(Vector2::Zero)
 		, pos(Vector2::Zero)
-		, size(20.f, 20.f)
+		, size(100.f, 100.f)
 	{
 
 	}

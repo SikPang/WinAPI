@@ -13,7 +13,7 @@ namespace ks
 	enum class e_LayerType
 	{
 		BG,
-		Monster,
+		Enemy,
 		Player,
 		Bullet,
 		Effect,

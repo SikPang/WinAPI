@@ -23,6 +23,7 @@ namespace ks
 		virtual void	Render(HDC hdc);
 		virtual void	Release();
 		void			AddGameObject(GameObject* newObject, e_LayerType layer);
+		const std::vector<GameObject*>& GetGameObjects(e_LayerType layer);
 		virtual void	OnEnter();
 		virtual void	OnExit();
 	};

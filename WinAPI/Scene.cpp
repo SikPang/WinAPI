@@ -49,6 +49,11 @@ namespace ks
 		layers[(UINT)layer].AddGameObject(newObject);
 	}
 
+	const std::vector<GameObject*>& Scene::GetGameObjects(e_LayerType layer)
+	{
+		return layers[(UINT)layer].GetGameObjects();
+	}
+
 	void Scene::OnEnter()
 	{
 
