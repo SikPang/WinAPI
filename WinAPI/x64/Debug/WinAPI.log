@@ -1,4 +1,0 @@
-﻿  PlayScene.cpp
-C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(24,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Song\source\repos\WinAPI\WinAPI\ks_Math.h(25,7): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  WinAPI.vcxproj -> C:\Users\Song\source\repos\WinAPI\x64\Debug\WinAPI.exe
