@@ -7,3 +7,13 @@ Browse.VC*
 *.sdf
 
 *.ipch
+
+
+
+*.idb
+
+*.vsidx
+
+*.res
+
+*.pdb
