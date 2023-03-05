@@ -22,9 +22,11 @@ namespace ks
 		// 씬에 플레이어 추가
 		player = new Player();
 		AddGameObject(player, e_LayerType::Player);
+		player->SetName(L"Me");
 
 		Enemy* enemy = new Enemy();
 		AddGameObject(enemy, e_LayerType::Enemy);
+		enemy->SetName(L"Zombie");
 
 		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
 		// 배경

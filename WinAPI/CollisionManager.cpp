@@ -68,8 +68,8 @@ namespace ks
 	
 	void CollisionManager::SetLayer(e_LayerType left, e_LayerType right, bool value)
 	{
-		UINT row = 0;
-		UINT col = 0;
+		UINT row;
+		UINT col;
 
 		if (left <= right)
 		{

@@ -68,8 +68,8 @@ namespace ks
 	
 	void Player::Render(HDC hdc)
 	{
-		TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(),
-			image->GetHdc(), 0, 0, image->GetWidth(), image->GetHeight(), RGB(255, 0, 255));
+		//TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(),
+		//	image->GetHdc(), 0, 0, image->GetWidth(), image->GetHeight(), RGB(255, 0, 255));
 
 		//BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 

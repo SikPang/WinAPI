@@ -16,9 +16,10 @@ namespace ks
 		Enemy,
 		Player,
 		Bullet,
+		Test,
 		Effect,
 		UI,
-		Size
+		Size = 16
 	};
 
 	enum class e_ComponentType

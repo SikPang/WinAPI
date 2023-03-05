@@ -34,7 +34,7 @@ namespace ks
 		//animator->Play(L"ResourcesEnemy", true);
 
 		transform = GetComponent<Transform>();
-		transform->SetPos(Vector2(700.0f, 400.0f));
+		transform->SetPos(Vector2(300.0f, 200.0f));
 		transform->SetScale(Vector2(1.5f, 1.5f));
 
 		Collider* collider = AddComponent<Collider>();
@@ -70,8 +70,8 @@ namespace ks
 	
 	void Enemy::Render(HDC hdc)
 	{
-		TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(),
-			image->GetHdc(), 0, 0, image->GetWidth(), image->GetHeight(), RGB(255, 0, 255));
+		//TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(),
+		//	image->GetHdc(), 0, 0, image->GetWidth(), image->GetHeight(), RGB(255, 0, 255));
 
 		//BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
 
