@@ -40,7 +40,7 @@ namespace ks
 
 	private:
 		std::map<std::wstring, Animation*> animations;
-		std::map<std::wstring, Event*> events;
+		std::map<std::wstring, Events*> events;
 		Image* spriteSheet;
 		Animation* activeAnimation;
 		bool isLoop;
@@ -66,8 +66,8 @@ namespace ks
 		void	Play(const std::wstring& name, bool loop);
 		Animation* FindAnimation(const std::wstring& name);
 		Events* FindEvents(const std::wstring& name);
-		std::function<void>& GetStartEvent(const std::wstring& name);
-		std::function<void>& GetCompleteEvent(const std::wstring& name);
-		std::function<void>& GetEndEvent(const std::wstring& name);
+		std::function<void()>& GetStartEvent(const std::wstring& name);
+		std::function<void()>& GetCompleteEvent(const std::wstring& name);
+		std::function<void()>& GetEndEvent(const std::wstring& name);
 	};
 }

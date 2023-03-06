@@ -34,7 +34,7 @@ namespace ks
 		time += Time::GetDeltaTime();
 		if (spriteSheet[spriteIndex].duration < time)
 		{
-			time = 0.0f;
+			time = 0.0;
 
 			if (spriteSheet.size() <= (size_t)spriteIndex + 1)
 				isComplete = true;

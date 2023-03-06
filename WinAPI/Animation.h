@@ -34,7 +34,7 @@ namespace ks
 		Animator* animator;
 		Image* sheetImage;
 		std::vector<Sprite> spriteSheet;
-		float time;
+		double time;
 		bool isComplete;
 		int spriteIndex;
 

@@ -18,10 +18,16 @@ namespace ks
 
 	Animator::~Animator()
 	{
-		for (auto &animation : animations)
+		for (auto& animation : animations)
 		{
 			delete animation.second;
 			animation.second = nullptr;
+		}
+
+		for (auto& events : this->events)
+		{
+			delete events.second;
+			events.second = nullptr;
 		}
 	}
 	
@@ -38,6 +44,10 @@ namespace ks
 
 			if (isLoop && activeAnimation->IsComplete())
 			{
+				Animator::Events* events = FindEvents(activeAnimation->GetName());
+				if (events != nullptr)
+					events->completeEvent();
+
 				activeAnimation->Reset();
 			}
 		}
@@ -69,6 +79,8 @@ namespace ks
 		newAnimation->SetAnimator(this);
 
 		animations.insert(std::make_pair(name, newAnimation));
+		Events* events = new Events();
+		this->events.insert(std::make_pair(name, events));
 	}
 
 	void Animator::CreateAnimations(const std::wstring& path, Vector2 offset, float duration)
@@ -116,8 +128,20 @@ namespace ks
 
 	void Animator::Play(const std::wstring& name, bool loop)
 	{
+		if (activeAnimation != nullptr)
+		{
+			Animator::Events* prevEvents = FindEvents(activeAnimation->GetName());
+			if (prevEvents != nullptr)
+				prevEvents->endEvent();
+		}
+
 		activeAnimation = FindAnimation(name);
+		activeAnimation->Reset();
 		isLoop = loop;
+
+		Animator::Events* curEvents = FindEvents(activeAnimation->GetName());
+		if (curEvents != nullptr)
+			curEvents->startEvent();
 	}
 
 	Animation* Animator::FindAnimation(const std::wstring& name)
@@ -132,6 +156,32 @@ namespace ks
 
 	Animator::Events* Animator::FindEvents(const std::wstring& name)
 	{
-		return nullptr;
+		std::map<std::wstring, Events*>::iterator iter = events.find(name);
+
+		if (iter == events.end())
+			return nullptr;
+
+		return iter->second;
+	}
+	std::function<void()>& Animator::GetStartEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
+
+		Animator::Events* events = FindEvents(animation->GetName());
+		return events->startEvent.event;
+	}
+	std::function<void()>& Animator::GetCompleteEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
+
+		Animator::Events* events = FindEvents(animation->GetName());
+		return events->completeEvent.event;
+	}
+	std::function<void()>& Animator::GetEndEvent(const std::wstring& name)
+	{
+		Animation* animation = FindAnimation(name);
+
+		Animator::Events* events = FindEvents(animation->GetName());
+		return events->endEvent.event;
 	}
 }

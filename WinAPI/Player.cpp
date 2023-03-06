@@ -26,7 +26,9 @@ namespace ks
 
 		animator = AddComponent<Animator>();
 		//animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
-		animator->CreateAnimation(L"Idle", image, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.1);
+		animator->CreateAnimation(L"Idle", image, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.1f);
+
+		animator->GetStartEvent(L"Idle") = std::bind(&Player::idleCompleteEvent, this);
 
 		animator->Play(L"Idle", true);
 
@@ -155,5 +157,12 @@ namespace ks
 			state = e_PlayerState::Attack;
 			animator->Play(L"Idle", true);
 		}
+	}
+
+	void Player::idleCompleteEvent()
+	{
+		//Bullet* newBullet = new Bullet();
+		//newBullet->GetComponent<Transform>()->SetPos(transform->GetPos());
+		//SceneManager::GetActiveScene()->AddGameObject(newBullet, e_LayerType::Bullet);
 	}
 }

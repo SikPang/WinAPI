@@ -48,4 +48,19 @@ namespace ks
 	{
 	
 	}
+
+	void Collider::OnCollisionEnter(Collider* other)
+	{
+		
+	}
+	
+	void Collider::OnCollisionStay(Collider* other)
+	{
+		
+	}
+	
+	void Collider::OnCollisionExit(Collider* other)
+	{
+		
+	}
 }

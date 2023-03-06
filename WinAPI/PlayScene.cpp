@@ -20,7 +20,7 @@ namespace ks
 	void PlayScene::Initialize()
 	{
 		// 씬에 플레이어 추가
-		player = new Player();
+		Player* player = new Player();
 		AddGameObject(player, e_LayerType::Player);
 		player->SetName(L"Me");
 		player->GetComponent<Transform>()->SetPos(Vector2(100.0f, 300.0f));

@@ -4,6 +4,7 @@
 namespace ks
 {
 	WORD CollisionManager::matrix[(UINT)e_LayerType::Size] = {};
+	std::map<UINT64, bool> CollisionManager::collisionMap = {};
 
 	void CollisionManager::Update()
 	{
@@ -36,14 +37,48 @@ namespace ks
 				if (rightCollider == nullptr || leftObject == rightObject)
 					continue;
 
-				if (Intersect(leftCollider, rightCollider))
-				{
-					// 충돌 o
-				}
-				else
-				{
-					// 충돌 x
-				}
+				ColliderCollision(leftCollider, rightCollider, left, right);
+			}
+		}
+	}
+
+	void CollisionManager::ColliderCollision(Collider* leftCollider, Collider* rightCollider, e_LayerType left, e_LayerType right)
+	{
+		Collider2D colliderId = {};
+		colliderId.left = (UINT)left;
+		colliderId.left = (UINT)right;
+
+		std::map<UINT64, bool>::iterator iter = collisionMap.find(colliderId.id);
+
+		if (iter == collisionMap.end())
+		{
+			collisionMap.insert(std::make_pair(colliderId.id, false));
+			iter = collisionMap.find(colliderId.id);
+		}
+
+		if (Intersect(leftCollider, rightCollider))
+		{
+			if (iter->second == false) // 최초 충돌
+			{
+				leftCollider->OnCollisionEnter(rightCollider);
+				rightCollider->OnCollisionEnter(leftCollider);
+
+				iter->second = true;
+			}
+			else // 충돌 중
+			{
+				leftCollider->OnCollisionStay(rightCollider);
+				rightCollider->OnCollisionStay(leftCollider);
+			}
+		}
+		else
+		{
+			if (iter->second == true) // 충돌에서 막 빠져나옴
+			{
+				leftCollider->OnCollisionExit(rightCollider);
+				rightCollider->OnCollisionExit(leftCollider);
+
+				iter->second = false;
 			}
 		}
 	}

@@ -24,6 +24,10 @@ namespace ks
 		void	Render(HDC hdc) override;
 		void	Release() override;
 
+		virtual void OnCollisionEnter(Collider* other);
+		virtual void OnCollisionStay(Collider* other);
+		virtual void OnCollisionExit(Collider* other);
+
 	public:
 		void	SetCenter(Vector2 center) { this->center = center; }
 		void	SetSize(Vector2 size) { this->size = size; }

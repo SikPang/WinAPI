@@ -4,6 +4,7 @@
 #include "Image.h"
 #include "Transform.h"
 #include "Animator.h"
+#include <functional>
 
 namespace ks
 {
@@ -29,6 +30,8 @@ namespace ks
 		void	Attack();
 		void	Death();
 		void	Idle();
+
+		void	idleCompleteEvent();
 
 	public:
 		Player();
