@@ -23,10 +23,12 @@ namespace ks
 		player = new Player();
 		AddGameObject(player, e_LayerType::Player);
 		player->SetName(L"Me");
+		player->GetComponent<Transform>()->SetPos(Vector2(100.0f, 300.0f));
 
 		Enemy* enemy = new Enemy();
 		AddGameObject(enemy, e_LayerType::Enemy);
 		enemy->SetName(L"Zombie");
+		enemy->GetComponent<Transform>()->SetPos(Vector2(500.0f, 300.0f));
 
 		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
 		// ¹è°æ

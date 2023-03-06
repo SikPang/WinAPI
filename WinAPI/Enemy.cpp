@@ -22,20 +22,19 @@ namespace ks
 	
 	void Enemy::Initialize()
 	{
-		image = Resources::Load<Image>(L"EnemyImage", L"..\\Resources\\Enemy\\enemy.bmp");
+		image = Resources::Load<Image>(L"EnemyImage", L"..\\Resources\\SpriteSheet\\Enemy\\enemy.bmp");
 
 		animator = AddComponent<Animator>();
-		animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
-		animator->CreateAnimation(L"Idle", image, Vector2(0.0f, 113.0f * 5), 16, 8, 16, Vector2::Zero, 0.1);
+		//animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
+		animator->CreateAnimation(L"Idle", image, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.1);
 
 		animator->Play(L"Idle", true);
 
-		//animator->CreateAnimations(L"..\\Resources\\Enemy", Vector2::Zero, 0.1f);
+		//animator->CreateAnimations(L"..\\Resources\\Sprites\\Enemy", Vector2::Zero, 0.1f);
 		//animator->Play(L"ResourcesEnemy", true);
 
 		transform = GetComponent<Transform>();
-		transform->SetPos(Vector2(500.0f, 300.0f));
-		transform->SetScale(Vector2(1.5f, 1.5f));
+		transform->SetScale(Vector2(1.1f, 1.1f));
 
 		Collider* collider = AddComponent<Collider>();
 		collider->SetCenter(Vector2(-60.f, -80.f));

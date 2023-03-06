@@ -22,16 +22,16 @@ namespace ks
 	
 	void Player::Initialize()
 	{
-		image = Resources::Load<Image>(L"playerImage", L"..\\Resources\\Player\\player.bmp");
+		image = Resources::Load<Image>(L"playerImage", L"..\\Resources\\SpriteSheet\\Player\\player.bmp");
 
 		animator = AddComponent<Animator>();
-		animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
-		animator->CreateAnimation(L"Idle", image, Vector2(0.0f, 113.0f * 5), 16, 8, 16, Vector2::Zero, 0.1);
+		//animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
+		animator->CreateAnimation(L"Idle", image, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.1);
 
-		//animator->Play(L"Idle", true);
+		animator->Play(L"Idle", true);
 
-		animator->CreateAnimations(L"..\\Resources\\Player", Vector2::Zero, 0.1f);
-		animator->Play(L"ResourcesPlayer", true);
+		//animator->CreateAnimations(L"..\\Resources\\Sprites\\Player", Vector2::Zero, 0.1f);
+		//animator->Play(L"ResourcesPlayer", true);
 
 		transform = GetComponent<Transform>();
 
@@ -91,7 +91,7 @@ namespace ks
 			state = e_PlayerState::Idle;
 		}
 
-		animator->Play(L"GoRight", true);
+		//animator->Play(L"GoRight", true);
 
 		Vector2 pos = transform->GetPos();
 
