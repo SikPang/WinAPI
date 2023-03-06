@@ -43,11 +43,11 @@ namespace ks
 			{
 				T* castedComp = dynamic_cast<T*>(component);
 
-				if (castedComp == nullptr)
-					return nullptr;
-				else 
+				if (castedComp != nullptr)
 					return castedComp;
 			}
+
+			return nullptr;
 		}
 	};
 }

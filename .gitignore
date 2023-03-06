@@ -17,3 +17,11 @@ Browse.VC*
 *.res
 
 *.pdb
+
+*.log
+
+*.ilk
+
+*.exe
+
+*.recipe

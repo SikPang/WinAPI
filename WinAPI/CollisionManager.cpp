@@ -32,14 +32,13 @@ namespace ks
 
 			for (auto rightObject : rights)
 			{
-				Collider* rightCollider = leftObject->GetComponent<Collider>();
+				Collider* rightCollider = rightObject->GetComponent<Collider>();
 				if (rightCollider == nullptr || leftObject == rightObject)
 					continue;
 
 				if (Intersect(leftCollider, rightCollider))
 				{
 					// Ãæµ¹ o
-					int a = 0;
 				}
 				else
 				{

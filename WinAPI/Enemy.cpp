@@ -34,7 +34,7 @@ namespace ks
 		//animator->Play(L"ResourcesEnemy", true);
 
 		transform = GetComponent<Transform>();
-		transform->SetPos(Vector2(300.0f, 200.0f));
+		transform->SetPos(Vector2(500.0f, 300.0f));
 		transform->SetScale(Vector2(1.5f, 1.5f));
 
 		Collider* collider = AddComponent<Collider>();

@@ -28,10 +28,10 @@ namespace ks
 		animator->CreateAnimation(L"GoRight", image, Vector2::Zero, 16, 8, 16, Vector2::Zero, 0.1);
 		animator->CreateAnimation(L"Idle", image, Vector2(0.0f, 113.0f * 5), 16, 8, 16, Vector2::Zero, 0.1);
 
-		animator->Play(L"Idle", true);
+		//animator->Play(L"Idle", true);
 
 		animator->CreateAnimations(L"..\\Resources\\Player", Vector2::Zero, 0.1f);
-		//animator->Play(L"ResourcesPlayer", true);
+		animator->Play(L"ResourcesPlayer", true);
 
 		transform = GetComponent<Transform>();
 
