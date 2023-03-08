@@ -83,6 +83,21 @@ namespace ks
 		GameObject::Release();
 	}
 
+	void Player::OnCollisionEnter(Collider* other)
+	{
+		
+	}
+
+	void Player::OnCollisionStay(Collider* other)
+	{
+
+	}
+
+	void Player::OnCollisionExit(Collider* other)
+	{
+
+	}
+
 	void Player::Move()
 	{
 		if (Input::GetKeyUp(e_KeyCode::A)

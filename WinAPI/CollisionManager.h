@@ -6,7 +6,7 @@
 
 namespace ks
 {
-	union Collider2D
+	union ColliderID
 	{
 		struct
 		{

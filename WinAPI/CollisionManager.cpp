@@ -44,9 +44,9 @@ namespace ks
 
 	void CollisionManager::ColliderCollision(Collider* leftCollider, Collider* rightCollider, e_LayerType left, e_LayerType right)
 	{
-		Collider2D colliderId = {};
-		colliderId.left = (UINT)left;
-		colliderId.left = (UINT)right;
+		ColliderID colliderId = {};
+		colliderId.left = (UINT)leftCollider->GetID();
+		colliderId.left = (UINT)rightCollider->GetID();
 
 		std::map<UINT64, bool>::iterator iter = collisionMap.find(colliderId.id);
 
@@ -124,6 +124,7 @@ namespace ks
 	
 	void CollisionManager::Clear()
 	{
-	
+		memset(matrix, 0, sizeof(WORD) * (UINT)e_LayerType::Size);
+		collisionMap.clear();
 	}
 }

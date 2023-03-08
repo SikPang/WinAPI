@@ -3,11 +3,14 @@
 
 namespace ks
 {
+	UINT Collider::colliderNumber = 0;
+
 	Collider::Collider()
 		: Component(e_ComponentType::Collider)
 		, center(Vector2::Zero)
 		, pos(Vector2::Zero)
 		, size(100.f, 100.f)
+		, id(colliderNumber++)
 	{
 
 	}
@@ -51,16 +54,16 @@ namespace ks
 
 	void Collider::OnCollisionEnter(Collider* other)
 	{
-		
+		GetGameObject()->OnCollisionEnter(other);
 	}
 	
 	void Collider::OnCollisionStay(Collider* other)
 	{
-		
+		GetGameObject()->OnCollisionStay(other);
 	}
 	
 	void Collider::OnCollisionExit(Collider* other)
 	{
-		
+		GetGameObject()->OnCollisionExit(other);
 	}
 }

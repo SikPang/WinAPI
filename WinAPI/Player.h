@@ -30,7 +30,6 @@ namespace ks
 		void	Attack();
 		void	Death();
 		void	Idle();
-
 		void	idleCompleteEvent();
 
 	public:
@@ -42,6 +41,11 @@ namespace ks
 		void	Update() override;
 		void	Render(HDC hdc) override;
 		void	Release() override;
+
+	public:
+		void OnCollisionEnter(Collider* other) override;
+		void OnCollisionStay(Collider* other) override;
+		void OnCollisionExit(Collider* other) override;
 	};
 }
 
