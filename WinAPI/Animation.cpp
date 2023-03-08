@@ -71,7 +71,7 @@ namespace ks
 	{
 		sheetImage = sheet;
 
-		Vector2 size = Vector2::One;
+		Vector2 size;
 		size.x = sheetImage->GetWidth() / (float)col;
 		size.y = sheetImage->GetHeight() / (float)row;
 

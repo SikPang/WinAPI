@@ -25,10 +25,6 @@ namespace ks
 
 		Vector2 dir = Vector2(500.f, 200.f) - transform->GetPos();
 		dir.Normalize();
-		// (x', y') == (cos(th), sin(th))
-		// PI / 4 == 45µµ
-		//float pX = cosf(-PI / 4.f);
-		//float pY = sinf(-PI / 4.f);
 
 		Vector2 pos = transform->GetPos();
 		pos.x += 300.f * dir.x * Time::GetDeltaTime();
