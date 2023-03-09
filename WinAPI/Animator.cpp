@@ -42,13 +42,14 @@ namespace ks
 		{
 			activeAnimation->Update();
 
-			if (isLoop && activeAnimation->IsComplete())
+			if (activeAnimation->IsComplete())
 			{
 				Animator::Events* events = FindEvents(activeAnimation->GetName());
 				if (events != nullptr)
 					events->completeEvent();
 
-				activeAnimation->Reset();
+				if (isLoop)
+					activeAnimation->Reset();
 			}
 		}
 	}
@@ -75,7 +76,7 @@ namespace ks
 
 		newAnimation = new Animation();
 		newAnimation->Create(sheet, leftTop, col, row, spriteLength, offset, duration);
-		newAnimation->SetName(name);
+		newAnimation->SetAnimationName(name);
 		newAnimation->SetAnimator(this);
 
 		animations.insert(std::make_pair(name, newAnimation));
@@ -167,21 +168,21 @@ namespace ks
 	{
 		Animation* animation = FindAnimation(name);
 
-		Animator::Events* events = FindEvents(animation->GetName());
+		Animator::Events* events = FindEvents(animation->GetAnimationName());
 		return events->startEvent.event;
 	}
 	std::function<void()>& Animator::GetCompleteEvent(const std::wstring& name)
 	{
 		Animation* animation = FindAnimation(name);
 
-		Animator::Events* events = FindEvents(animation->GetName());
+		Animator::Events* events = FindEvents(animation->GetAnimationName());
 		return events->completeEvent.event;
 	}
 	std::function<void()>& Animator::GetEndEvent(const std::wstring& name)
 	{
 		Animation* animation = FindAnimation(name);
 
-		Animator::Events* events = FindEvents(animation->GetName());
+		Animator::Events* events = FindEvents(animation->GetAnimationName());
 		return events->endEvent.event;
 	}
 }

@@ -2,6 +2,11 @@
 #include "Input.h"
 #include "SceneManager.h"
 #include "ks_Resources.h"
+#include "Enemy.h"
+#include "CollisionManager.h"
+#include "Camera.h"
+#include "Object.h"
+#include "Player.h"
 
 namespace ks
 {
@@ -17,6 +22,10 @@ namespace ks
 
 	void TitleScene::Initialize()
 	{
+		// 게임이 처음 시작될 때, 모든 씬이 초기화되는 과정에서 각각의 씬이 자신의 게임오브젝트를 갖기 위해
+		// 잠깐 activeScene을 자신으로 해두고 Instantiate (현재 activeScene에 AddGameObject)
+		Scene::Initialize();
+
 		// 배경
 		bGImage = Resources::Load<Image>(L"bgTitleImage", L"..\\Resources\\bg_title.bmp");
 	}
@@ -47,11 +56,12 @@ namespace ks
 
 	void TitleScene::OnEnter()
 	{
-
+		
 	}
 
 	void TitleScene::OnExit()
 	{
-
+		//CollisionManager::Clear();
+		//Camera::Clear();
 	}
 }

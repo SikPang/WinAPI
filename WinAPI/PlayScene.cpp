@@ -21,7 +21,11 @@ namespace ks
 
 	void PlayScene::Initialize()
 	{
-		Player* player = ks::Instantiate<Player>(e_LayerType::Player, L"Me", Vector2(200.f, 300.f));
+		// 게임이 처음 시작될 때, 모든 씬이 초기화되는 과정에서 각각의 씬이 자신의 게임오브젝트를 갖기 위해
+		// 잠깐 activeScene을 자신으로 해두고 Instantiate (현재 activeScene에 AddGameObject)
+		Scene::Initialize();
+
+		player = ks::Instantiate<Player>(e_LayerType::Player, L"Me", Vector2(200.f, 300.f));
 
 		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy1", Vector2(400.f, 300.f));
 		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy2", Vector2(0.f, 300.f));
@@ -59,11 +63,13 @@ namespace ks
 	void PlayScene::OnEnter()
 	{
 		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
+		Camera::SetTarget(player);
 	}
 
 	void PlayScene::OnExit()
 	{
 		CollisionManager::Clear();
+		Camera::Clear();
 		//player->SetPos(Vector2(0.0f, 0.0f));
 	}
 }

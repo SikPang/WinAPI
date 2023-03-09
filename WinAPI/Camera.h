@@ -17,6 +17,7 @@ namespace ks
 	public:
 		static void Initialize();
 		static void Update();
+		static void Clear();
 		static void SetTarget(GameObject* target) { Camera::target = target; }
 		static Vector2 CalculatePos(Vector2 pos) { return pos - distance; }
 	};

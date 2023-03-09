@@ -39,7 +39,7 @@ namespace ks
 		RECT rect = { 0, 0, width, height };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
-		SetWindowPos(hwnd, nullptr, 0, 0, rect.right - rect.left, rect.bottom - rect.top, 0);
+		SetWindowPos(this->hwnd, nullptr, 0, 0, rect.right - rect.left, rect.bottom - rect.top, 0);
 		ShowWindow(hwnd, true);
 
 		backBuffer = CreateCompatibleBitmap(hdc, width, height);
@@ -57,6 +57,7 @@ namespace ks
 	{
 		Update();
 		Render();
+		SceneManager::Destroy();
 	}
 
 	void Application::Update()

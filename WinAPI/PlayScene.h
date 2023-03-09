@@ -7,6 +7,7 @@ namespace ks
 	class PlayScene : public Scene
 	{
 	private:
+		Player* player;
 
 	public:
 		PlayScene();

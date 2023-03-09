@@ -1,11 +1,13 @@
 #pragma once
 #include "Scene.h"
+#include "Player.h"
 
 namespace ks
 {
 	class TitleScene : public Scene
 	{
 	private:
+		Player* player;
 
 	public:
 		TitleScene();

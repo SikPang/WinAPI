@@ -34,6 +34,7 @@ namespace ks
 		Animator* animator;
 		Image* sheetImage;
 		std::vector<Sprite> spriteSheet;
+		std::wstring animationName;
 		double time;
 		bool isComplete;
 		int spriteIndex;
@@ -51,5 +52,7 @@ namespace ks
 
 		bool IsComplete() { return isComplete; }
 		void SetAnimator(Animator* animator) { this->animator = animator; }
+		void SetAnimationName(const std::wstring& name) { animationName = name; }
+		std::wstring& GetAnimationName() { return animationName; }
 	};
 }

@@ -55,7 +55,6 @@ namespace ks
 		pos.x -= spriteSheet[spriteIndex].size.x / 2.0f;
 		pos.y -= spriteSheet[spriteIndex].size.y;
 
-		// 크기 조정 안 됨 3,4번째 인자에 배수
 		TransparentBlt(hdc
 			, pos.x, pos.y
 			, spriteSheet[spriteIndex].size.x * scale.x

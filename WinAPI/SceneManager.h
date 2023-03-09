@@ -16,7 +16,11 @@ namespace ks
 		static void	Update();
 		static void	Render(HDC hdc);
 		static void	Release();
+		static void	Destroy();
+
+	public:
 		static void	LoadScene(e_SceneType type);
 		static Scene* GetActiveScene() { return activeScene; }
+		static void	SetActiveScene(Scene* scene) { activeScene = scene; }
 	};
 }

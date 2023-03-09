@@ -1,4 +1,5 @@
 #include "Scene.h"
+#include "SceneManager.h"
 
 namespace ks
 {
@@ -14,7 +15,7 @@ namespace ks
 
 	void Scene::Initialize()
 	{
-
+		SceneManager::SetActiveScene(this);
 	}
 
 	void Scene::Update()

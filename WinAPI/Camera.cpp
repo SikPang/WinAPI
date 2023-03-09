@@ -25,4 +25,10 @@ namespace ks
 
 		distance = lookPosition - resolution / 2.f;
 	}
+
+	void Camera::Clear()
+	{
+		Initialize();
+		distance = Vector2::Zero;
+	}
 }
