@@ -30,7 +30,8 @@ namespace ks
 	{
 		for (GameObject* gameObject : gameObjects)
 		{
-			if (gameObject == nullptr)
+			if (gameObject == nullptr
+				|| gameObject->GetState() != GameObject::e_State::Active)
 				continue;
 
 			gameObject->Update();
@@ -41,7 +42,8 @@ namespace ks
 	{
 		for (GameObject* gameObject : gameObjects)
 		{
-			if (gameObject == nullptr)
+			if (gameObject == nullptr
+				|| gameObject->GetState() != GameObject::e_State::Active)
 				continue;
 
 			gameObject->Render(hdc);

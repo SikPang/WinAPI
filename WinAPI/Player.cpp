@@ -7,6 +7,7 @@
 #include "Bullet.h"
 #include "SceneManager.h"
 #include "Enums.h"
+#include "Object.h"
 
 namespace ks
 {
@@ -106,7 +107,7 @@ namespace ks
 			|| Input::GetKeyUp(e_KeyCode::S))
 		{
 			state = e_PlayerState::Idle;
-		}
+		}	
 
 		//animator->Play(L"GoRight", true);
 
@@ -138,12 +139,8 @@ namespace ks
 	void Player::Attack()
 	{
 		if (Input::GetKey(e_KeyCode::K))
-		{
-			Bullet* newBullet = new Bullet();
-			newBullet->GetComponent<Transform>()->SetPos(transform->GetPos());
-			SceneManager::GetActiveScene()->AddGameObject(newBullet, e_LayerType::Bullet);
-		}
-
+			ks::Instantiate<Bullet>(e_LayerType::Bullet, L"bullet", transform->GetPos());
+		
 		if (Input::GetKeyUp(e_KeyCode::K))
 		{
 			state = e_PlayerState::Idle;

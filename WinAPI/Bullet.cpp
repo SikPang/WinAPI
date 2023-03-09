@@ -1,10 +1,12 @@
 #include "Bullet.h"
 #include "Transform.h"
 #include "Time.h"
+#include "Object.h"
 
 namespace ks
 {
 	Bullet::Bullet()
+		: time(0.f)
 	{
 
 	}
@@ -23,7 +25,7 @@ namespace ks
 	{
 		Transform* transform = GetComponent<Transform>();
 
-		Vector2 dir = Vector2(500.f, 200.f) - transform->GetPos();
+		Vector2 dir = Vector2(500.f, 200.f);
 		dir.Normalize();
 
 		Vector2 pos = transform->GetPos();
@@ -31,6 +33,10 @@ namespace ks
 		pos.y += 300.f * dir.y * Time::GetDeltaTime();
 		
 		transform->SetPos(pos);
+
+		time += Time::GetDeltaTime();
+		if (time > 2.0f)
+			ks::Destroy(this);
 	}
 	
 	void Bullet::Render(HDC hdc)

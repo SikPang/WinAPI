@@ -151,6 +151,9 @@
     <ClInclude Include="Camera.h">
       <Filter>Engine\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WinAPI.rc">

@@ -14,10 +14,7 @@ namespace ks
 
 	void Scene::Initialize()
 	{
-		for (Layer& layer : layers)
-		{
-			layer.Initialize();
-		}
+
 	}
 
 	void Scene::Update()
@@ -44,12 +41,60 @@ namespace ks
 		}
 	}
 
+	void Scene::Destroy()
+	{
+		for (Layer& layer : layers)
+		{
+			std::vector<GameObject*>& gameObjects = layer.GetGameObjects();
+
+			for (std::vector<GameObject*>::iterator iter = gameObjects.begin(); iter != gameObjects.end(); )
+			{
+				if ((*iter)->GetState() == GameObject::e_State::Death)
+				{
+					delete (*iter);
+					*iter = nullptr;
+					iter = gameObjects.erase(iter);
+				}
+				else
+					++iter;
+			}
+		}
+
+		// 굳이 vector 만들어서?
+		//std::vector<GameObject*> deleteGameObjects = {};
+		//for (Layer& layer : layers)
+		//{
+		//	std::vector<GameObject*>& gameObjects
+		//		= layer.GetGameObjects();
+
+		//	for (std::vector<GameObject*>::iterator iter = gameObjects.begin()
+		//		; iter != gameObjects.end(); )
+		//	{
+		//		if ((*iter)->GetState() == GameObject::e_State::Death)
+		//		{
+		//			deleteGameObjects.push_back((*iter));
+		//			iter = gameObjects.erase(iter);
+		//		}
+		//		else
+		//		{
+		//			iter++;
+		//		}
+		//	}
+		//}
+
+		//for (GameObject* deathObj : deleteGameObjects)
+		//{
+		//	delete deathObj;
+		//	deathObj = nullptr;
+		//}
+	}
+
 	void Scene::AddGameObject(GameObject* newObject, e_LayerType layer)
 	{
 		layers[(UINT)layer].AddGameObject(newObject);
 	}
 
-	const std::vector<GameObject*>& Scene::GetGameObjects(e_LayerType layer)
+	std::vector<GameObject*>& Scene::GetGameObjects(e_LayerType layer)
 	{
 		return layers[(UINT)layer].GetGameObjects();
 	}

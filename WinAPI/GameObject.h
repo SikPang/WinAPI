@@ -11,8 +11,17 @@ namespace ks
 {
 	class GameObject : public Entity
 	{
+	public:
+		enum class e_State
+		{
+			Active,
+			Pause,
+			Death
+		};
+
 	protected:
 		HDC		hdc;
+		e_State	state;
 		std::vector<Component*>	components;
 
 	public:
@@ -54,5 +63,9 @@ namespace ks
 
 			return nullptr;
 		}
+
+
+		e_State	GetState() { return state; }
+		void	SetState(e_State state) { this->state = state; }
 	};
 }

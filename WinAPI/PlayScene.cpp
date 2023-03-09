@@ -5,6 +5,7 @@
 #include "Enemy.h"
 #include "CollisionManager.h"
 #include "Camera.h"
+#include "Object.h"
 
 namespace ks
 {
@@ -21,23 +22,15 @@ namespace ks
 	void PlayScene::Initialize()
 	{
 		// 씬에 플레이어 추가
-		Player* player = new Player();
-		AddGameObject(player, e_LayerType::Player);
-		player->SetName(L"Me");
-		player->GetComponent<Transform>()->SetPos(Vector2(100.0f, 300.0f));
+		Player* player = ks::Instantiate<Player>(e_LayerType::Player, L"Me", Vector2(200.f, 300.f));
 
-		Camera::SetTarget(player);
+		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy1", Vector2(400.f, 300.f));
+		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy2", Vector2(0.f, 300.f));
 
-		Enemy* enemy = new Enemy();
-		AddGameObject(enemy, e_LayerType::Enemy);
-		enemy->SetName(L"Zombie");
-		enemy->GetComponent<Transform>()->SetPos(Vector2(500.0f, 300.0f));
-
-		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
 		// 배경
 		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_play.bmp");
 
-		Scene::Initialize();
+		Camera::SetTarget(player);
 	}
 	
 	void PlayScene::Update()
@@ -66,11 +59,12 @@ namespace ks
 
 	void PlayScene::OnEnter()
 	{
-
+		CollisionManager::SetLayer(e_LayerType::Player, e_LayerType::Enemy, true);
 	}
 
 	void PlayScene::OnExit()
 	{
+		CollisionManager::Clear();
 		//player->SetPos(Vector2(0.0f, 0.0f));
 	}
 }

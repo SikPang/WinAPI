@@ -6,7 +6,7 @@ namespace ks
     class Bullet : public GameObject
     {
     private:
-
+		float time;
 
 	public:
 		Bullet();
