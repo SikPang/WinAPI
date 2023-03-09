@@ -22,6 +22,9 @@ namespace ks
 	
 	void Enemy::Initialize()
 	{
+		transform = GetComponent<Transform>();
+		transform->SetScale(Vector2(0.55f, 0.55f));
+
 		image = Resources::Load<Image>(L"EnemyImage", L"..\\Resources\\SpriteSheet\\Enemy\\enemy.bmp");
 
 		animator = AddComponent<Animator>();
@@ -33,11 +36,11 @@ namespace ks
 		//animator->CreateAnimations(L"..\\Resources\\Sprites\\Enemy", Vector2::Zero, 0.1f);
 		//animator->Play(L"ResourcesEnemy", true);
 
-		transform = GetComponent<Transform>();
-		transform->SetScale(Vector2(1.1f, 1.1f));
 
 		Collider* collider = AddComponent<Collider>();
-		collider->SetCenter(Vector2(-60.f, -80.f));
+		collider->SetCenter(Vector2(-(int)image->GetWidth()/7, -(int)image->GetHeight()));	// width ¼öÁ¤
+		collider->SetSize(Vector2((int)(image->GetWidth() / 3 * transform->GetScale().x)
+			, (int)(image->GetHeight() * transform->GetScale().y)));
 
 		state = e_EnemyState::Idle;
 		
@@ -69,11 +72,6 @@ namespace ks
 	
 	void Enemy::Render(HDC hdc)
 	{
-		//TransparentBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(),
-		//	image->GetHdc(), 0, 0, image->GetWidth(), image->GetHeight(), RGB(255, 0, 255));
-
-		//BitBlt(hdc, transform->GetPos().x, transform->GetPos().y, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
-
 		GameObject::Render(hdc);
 	}
 	

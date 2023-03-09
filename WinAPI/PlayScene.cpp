@@ -21,14 +21,13 @@ namespace ks
 
 	void PlayScene::Initialize()
 	{
-		// 씬에 플레이어 추가
 		Player* player = ks::Instantiate<Player>(e_LayerType::Player, L"Me", Vector2(200.f, 300.f));
 
 		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy1", Vector2(400.f, 300.f));
 		ks::Instantiate<Enemy>(e_LayerType::Enemy, L"Enemy2", Vector2(0.f, 300.f));
 
 		// 배경
-		image = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_play.bmp");
+		bGImage = Resources::Load<Image>(L"bgPlayImage", L"..\\Resources\\bg_play.bmp");
 
 		Camera::SetTarget(player);
 	}
@@ -46,7 +45,7 @@ namespace ks
 	void PlayScene::Render(HDC hdc)
 	{
 		// 씬의 배경화면
-		BitBlt(hdc, 0, 0, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
+		BitBlt(hdc, 0, 0, bGImage->GetWidth(), bGImage->GetHeight(), bGImage->GetHdc(), 0, 0, SRCCOPY);
 
 		// 씬의 오브젝트
 		Scene::Render(hdc);

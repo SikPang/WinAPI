@@ -10,7 +10,7 @@ namespace ks
 	class Scene : public Entity
 	{
 	protected:
-		Image* image;
+		Image* bGImage;
 		std::vector<Layer> layers;
 
 	public:

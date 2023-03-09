@@ -17,7 +17,8 @@ namespace ks
 
 	void TitleScene::Initialize()
 	{
-		image = Resources::Load<Image>(L"bgTitleImage", L"..\\Resources\\bg_title.bmp");
+		// 배경
+		bGImage = Resources::Load<Image>(L"bgTitleImage", L"..\\Resources\\bg_title.bmp");
 	}
 
 	void TitleScene::Update()
@@ -33,7 +34,7 @@ namespace ks
 	void TitleScene::Render(HDC hdc)
 	{
 		// 씬의 배경 화면
-		BitBlt(hdc, 0, 0, image->GetWidth(), image->GetHeight(), image->GetHdc(), 0, 0, SRCCOPY);
+		BitBlt(hdc, 0, 0, bGImage->GetWidth(), bGImage->GetHeight(), bGImage->GetHdc(), 0, 0, SRCCOPY);
 
 		// 씬의 오브젝트
 		Scene::Render(hdc);
