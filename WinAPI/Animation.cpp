@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "Time.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace ks
 {
@@ -47,7 +48,7 @@ namespace ks
 	{
 		Transform* transform = animator->GetGameObject()->GetComponent<Transform>();
 		Vector2 scale = transform->GetScale();
-		Vector2 pos = transform->GetPos();
+		Vector2 pos = Camera::CalculatePos(transform->GetPos());
 
 		// 캐릭터의 발을 기준으로 포지션을 계산
 		pos += spriteSheet[spriteIndex].offset;

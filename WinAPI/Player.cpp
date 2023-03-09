@@ -122,15 +122,15 @@ namespace ks
 			pos.x += 200.f * Time::GetDeltaTime();
 		}
 
-		if (Input::GetKey(e_KeyCode::W))
-		{
-			pos.y -= 200.f * Time::GetDeltaTime();
-		}
+		//if (Input::GetKey(e_KeyCode::W))
+		//{
+		//	pos.y -= 200.f * Time::GetDeltaTime();
+		//}
 
-		if (Input::GetKey(e_KeyCode::S))
-		{
-			pos.y += 200.f * Time::GetDeltaTime();
-		}
+		//if (Input::GetKey(e_KeyCode::S))
+		//{
+		//	pos.y += 200.f * Time::GetDeltaTime();
+		//}
 
 		transform->SetPos(pos);
 	}

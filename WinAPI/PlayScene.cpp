@@ -4,6 +4,7 @@
 #include "ks_Resources.h"
 #include "Enemy.h"
 #include "CollisionManager.h"
+#include "Camera.h"
 
 namespace ks
 {
@@ -24,6 +25,8 @@ namespace ks
 		AddGameObject(player, e_LayerType::Player);
 		player->SetName(L"Me");
 		player->GetComponent<Transform>()->SetPos(Vector2(100.0f, 300.0f));
+
+		Camera::SetTarget(player);
 
 		Enemy* enemy = new Enemy();
 		AddGameObject(enemy, e_LayerType::Enemy);

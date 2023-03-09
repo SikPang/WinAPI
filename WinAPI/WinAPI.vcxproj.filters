@@ -59,6 +59,9 @@
     <Filter Include="Contents\Enemy">
       <UniqueIdentifier>{c0aedddd-e4bc-4467-bcc0-736717d38b47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Camera">
+      <UniqueIdentifier>{07e0fbea-21b0-4733-b56f-cb46db258f55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -144,6 +147,9 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Contents\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Engine\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +237,9 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Contents\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Engine\Camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

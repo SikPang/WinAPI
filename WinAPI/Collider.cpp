@@ -1,5 +1,6 @@
 #include "Collider.h"
 #include "GameObject.h"
+#include "Camera.h"
 
 namespace ks
 {
@@ -39,7 +40,8 @@ namespace ks
 		HBRUSH brush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
 
-		Rectangle(hdc, pos.x, pos.y, pos.x + size.x, pos.y + size.y);
+		Vector2 camPos = Camera::CalculatePos(pos);
+		Rectangle(hdc, camPos.x, camPos.y, camPos.x + size.x, camPos.y + size.y);
 
 		SelectObject(hdc, oldPen);
 		SelectObject(hdc, oldBrush);

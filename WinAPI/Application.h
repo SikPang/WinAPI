@@ -29,6 +29,7 @@ namespace ks
 		void	Render();
 		HWND	GetHwnd() { return hwnd; }
 		HDC		GetHdc() { return hdc; }
+		Vector2	GetResolution() { return Vector2((int)width, (int)height); }
 	};
 }
 

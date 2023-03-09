@@ -3,6 +3,7 @@
 #include "Time.h"
 #include "Input.h"
 #include "CollisionManager.h"
+#include "Camera.h"
 
 namespace ks
 {
@@ -49,6 +50,7 @@ namespace ks
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		Camera::Initialize();
 	}
 
 	void Application::Run()
@@ -61,6 +63,7 @@ namespace ks
 	{
 		Time::Update();
 		Input::Update();
+		Camera::Update();
 		SceneManager::Update();
 		CollisionManager::Update();
 	}

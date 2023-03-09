@@ -43,7 +43,7 @@ namespace ks
 		Vector2(Vector2&&) = default;
 		Vector2& operator=(Vector2&&) = default;
 
-		Vector2& operator+(Vector2 other)
+		Vector2 operator+(const Vector2& other)
 		{
 			Vector2 temp;
 
@@ -52,12 +52,30 @@ namespace ks
 			return (temp);
 		}
 
-		Vector2& operator-(Vector2 other)
+		Vector2 operator-(const Vector2& other)
 		{
 			Vector2 temp;
 
 			temp.x = this->x - other.x;
 			temp.y = this->y - other.y;
+			return (temp);
+		}
+
+		Vector2 operator*(const Vector2& other)
+		{
+			Vector2 temp;
+
+			temp.x = this->x * other.x;
+			temp.y = this->y * other.y;
+			return (temp);
+		}
+
+		Vector2 operator/(float ratio)
+		{
+			Vector2 temp;
+
+			temp.x = this->x / ratio;
+			temp.y = this->y / ratio;
 			return (temp);
 		}
 
